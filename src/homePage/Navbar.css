@@ -1,0 +1,129 @@
+body {
+    margin: 0;
+    background-color: white;
+}
+
+.navbar {
+    display: flex;
+    color: black;
+    justify-content: space-between; /* Distributes space between logo and nav items */
+    align-items: center; /* Centers items vertically */
+    height: 13%; /* Set height of navbar */
+    background: white; /* Background color */
+    position: fixed; /* Fixed position */
+    width: 100%; /* Full width */
+    z-index: 1000; /* Ensure it appears on top */
+    padding: 0 2rem; /* Add horizontal padding */
+    top: 0; /* Ensures the navbar is at the top */
+}
+
+#navigation1 {
+    color: rgb(56, 56, 56);
+    flex-direction: row;
+    align-items: center; /* Align nav items vertically */
+    flex-wrap: wrap; /* Allows items to wrap */
+    font-size: 15%; /* Font size for nav items */
+    padding-left: 20%;
+    flex-grow: 1; /* This allows the ul to take remaining space */
+}
+  
+#navigation2 {
+    display: flex; /* Ensure it's displayed as flex */
+    color: black;
+    padding-left: 8%; 
+    align-items: center; /* Align nav items vertically */
+    flex-grow: 1; /* This allows the ul to take remaining space */
+    white-space: nowrap; /* Prevents text from wrapping to the next line */
+}
+
+.nav-links2 {
+    list-style: none;
+    color: black;
+    margin: 0;
+    padding: 0; /* Reset padding */
+}
+
+/* Reduced font size for the Airbnb link */
+.nav-links2 .nav-link {
+    color: black; /* Keep text color */
+    font-size: 14px; /* Reduced font size for this specific link */
+    padding: 0px 20px; /* Maintain padding for better spacing */
+}
+
+
+.logo {
+    flex: 0 0 auto; /* Prevent logo from growing */
+}
+  
+.logo-link {
+    font-weight: bold; /* Bold text */
+    color: black;
+}
+  
+.logo-image {
+    height: 60px; /* Adjust the size of the logo */
+}
+  
+.nav-links {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+  
+.nav-link {
+    color: rgb(127, 129, 131);
+    text-decoration: none;
+    margin: 0 10%; /* Adjust margin as needed */
+    font-size: 20px; /* Increased font size for nav items */
+    font-weight: bold; /* Bold text */
+    transition: color 0.3s; /* Smooth transition for hover effect */
+    position: relative; /* Needed for pseudo elements */
+    padding: 0px 20px; /* Add padding for better spacing around text */
+}
+
+/* Hover styles for non-active links only */
+.nav-link:not(.active):hover {
+    color: rgb(127, 129, 131); /* Color on hover */
+    background-color: rgb(235, 228, 228); /* Background color for hover */
+    border-radius: 30px; /* Make it rounded */
+}
+
+/* Active link styles */
+.active {
+    background: transparent; /* Keep active background transparent */
+    color: black; /* Keep active color */
+}
+
+/* Optional: Keep the active link text highlighted */
+.active:hover {
+    color: black; /* Prevent color change on hover for active link */
+}
+
+.logo-link:hover {
+    color: #ff385c; /* Change color on hover */
+}
+
+.globe-link {
+    margin-left: 10px; /* Adjust as needed */
+    font-size: 20px; /* Adjust size as needed */
+    color: rgb(127, 129, 131); /* Icon color */
+}
+
+.globe-link:hover {
+    color: #ff385c; /* Change color on hover */
+}
+
+.icon-container {
+    display: flex;
+    align-items: center;
+}
+
+.list-icon, .user-icon {
+    font-size: 18px; /* Adjust font size to match the desired look */
+    margin-right: 5px; /* Add some spacing between icons */
+    color: rgb(127, 129, 131); /* Keep the same color */
+}
+
+.user-link:hover .list-icon, .user-link:hover .user-icon {
+    color: #ff385c; /* Change color on hover */
+}
