@@ -22,7 +22,7 @@ createRoot(document.getElementById('root')).render(
         <Route path="/" element={<Cards_grid />} />
         
         {/* Detail page route */}
-        <Route path="/detail/:id" element={<DetailPage />} />
+        <Route path="/listings/:id" element={<DetailPage />} />
       </Routes>
     </BrowserRouter>
   </StrictMode>

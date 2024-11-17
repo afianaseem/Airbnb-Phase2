@@ -1,35 +1,43 @@
 import React, { useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faBackward, faForward } from '@fortawesome/free-solid-svg-icons';
-import { Link } from 'react-router-dom'; // Import Link for navigation
 import './Card.css';
 
 function Card({ object }) {
   const [currentIndex, setCurrentIndex] = useState(0);
+  const navigate = useNavigate();
 
   const imageUrls = [
     object.images.thumbnail_url,
     object.images.medium_url,
     object.images.picture_url,
-    object.images.xl_picture_url
+    object.images.xl_picture_url,
   ];
 
-  // Handlers for next and previous buttons
-  const nextSlide = () => {
+  const nextSlide = (e) => {
+    e.stopPropagation(); // Prevents navigation when clicking the button
     if (currentIndex < imageUrls.length - 1) {
       setCurrentIndex(currentIndex + 1);
     }
   };
 
-  const prevSlide = () => {
+  const prevSlide = (e) => {
+    e.stopPropagation(); // Prevents navigation when clicking the button
     if (currentIndex > 0) {
       setCurrentIndex(currentIndex - 1);
     }
   };
 
+  // Function to navigate to the listing details page
+  const handleImageClick = () => {
+    navigate(`/listing/${object._id}`);
+  };
+
   return (
-    <div className="container1">
+    <div className='container1' style={{ cursor: 'pointer' }}>
       <div className="carousel-container-images">
+        {/* Backward button */}
         <button
           id="prevButton"
           onClick={prevSlide}
@@ -39,10 +47,18 @@ function Card({ object }) {
           <FontAwesomeIcon icon={faBackward} size="1x" />
         </button>
 
+        {/* Image */}
         <div className="image-container" style={{ transform: `translateX(-${currentIndex}%)` }}>
-          <img className="image-item" src={imageUrls[currentIndex]} alt={object.name} />
+          <img
+            className="image-item"
+            src={imageUrls[currentIndex]}
+            alt="Listing"
+            onClick={handleImageClick} // Navigate only when clicking on the image
+            style={{ cursor: 'pointer' }}
+          />
         </div>
 
+        {/* Forward button */}
         <button
           id="nextButton"
           onClick={nextSlide}
@@ -52,12 +68,8 @@ function Card({ object }) {
         </button>
       </div>
 
-      {/* Link to the detail page */}
-      <h5>
-        <Link to={`/detail/${object.id}`} className="card-title-link">
-          {object.name}
-        </Link>
-      </h5>
+      {/* Listing Details */}
+      <h5>{object.name}</h5>
       <p>{object.host.host_name}</p>
       <p>{object.price}</p>
     </div>

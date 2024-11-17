@@ -1,17 +1,14 @@
-/* General container for the card */
 
 .container1 {
-  margin-top: 100%;
+  margin-top: 40%;
   height: auto;
   width: 20vw;
   position: relative;
   display: flex;
   padding: 0% 2%;
 flex-direction: column;
-   /* Enable absolute positioning for child elements */
 }
 
-/* Flex container for the carousel images */
 .carousel-container-images {
  display: flex;
  width: 20vw; /* Set fixed width for images */
