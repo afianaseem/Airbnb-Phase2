@@ -1,15 +1,22 @@
-import React, { useState } from 'react'; // Import useState
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'; // Ensure FontAwesomeIcon is imported
-import { faBackward, faForward } from '@fortawesome/free-solid-svg-icons'; // Ensure these icons are imported
+import React, { useState } from 'react';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faBackward, faForward } from '@fortawesome/free-solid-svg-icons';
+import { Link } from 'react-router-dom'; // Import Link for navigation
 import './Card.css';
 
 function Card({ object }) {
   const [currentIndex, setCurrentIndex] = useState(0);
-  const [image,setimage]=useState(object.images[0]);
+
+  const imageUrls = [
+    object.images.thumbnail_url,
+    object.images.medium_url,
+    object.images.picture_url,
+    object.images.xl_picture_url
+  ];
 
   // Handlers for next and previous buttons
   const nextSlide = () => {
-    if (currentIndex < object.images.length - 1) {
+    if (currentIndex < imageUrls.length - 1) {
       setCurrentIndex(currentIndex + 1);
     }
   };
@@ -21,40 +28,40 @@ function Card({ object }) {
   };
 
   return (
-    <>
-      <div className='container1'>
-        <div className="carousel-container-images">
-          <button
-            id="prevButton"
-            onClick={prevSlide}
-            disabled={currentIndex === 0}
-            style={{ display: currentIndex === 0 ? 'none' : 'block' }} // Show only after moving forward
-          >
-            <FontAwesomeIcon icon={faBackward} size="1x" />
-          </button>
+    <div className="container1">
+      <div className="carousel-container-images">
+        <button
+          id="prevButton"
+          onClick={prevSlide}
+          disabled={currentIndex === 0}
+          style={{ display: currentIndex === 0 ? 'none' : 'block' }}
+        >
+          <FontAwesomeIcon icon={faBackward} size="1x" />
+        </button>
 
-          <div className="image-container" style={{ transform: `translateX(-${currentIndex }%)` }}>
-            
-              <img className="image-item" src={object.images[currentIndex]}  />
-            
-          </div>
+        <div className="image-container" style={{ transform: `translateX(-${currentIndex}%)` }}>
+          <img className="image-item" src={imageUrls[currentIndex]} alt={object.name} />
+        </div>
 
-          <button
-            id="nextButton"
-            onClick={nextSlide}
-            disabled={currentIndex >= object.images.length - 1}
-          >
-            <FontAwesomeIcon icon={faForward} size="1x" />
-          </button>
-        </div>
-        <div>
-        <h5>{object.location}</h5>
-        <p>{object.hostedby}</p>
-        <p>{object.price}</p>
-        </div>
+        <button
+          id="nextButton"
+          onClick={nextSlide}
+          disabled={currentIndex >= imageUrls.length - 1}
+        >
+          <FontAwesomeIcon icon={faForward} size="1x" />
+        </button>
       </div>
-    </>
+
+      {/* Link to the detail page */}
+      <h5>
+        <Link to={`/detail/${object.id}`} className="card-title-link">
+          {object.name}
+        </Link>
+      </h5>
+      <p>{object.host.host_name}</p>
+      <p>{object.price}</p>
+    </div>
   );
 }
 
-export default Card
+export default Card;
