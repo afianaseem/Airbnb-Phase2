@@ -6,13 +6,14 @@ import BookingPage from './booking_page/Booking_page';
 
 function App() {
   return (
-    
-      <Routes>
+     
+    <div className='Bo'>
+      <Routes >
         <Route path="/" element={<HomePage />} />
         <Route path="/listing/:id" element={<ListingDetails />} />
         <Route path="/booking/:id" element={<BookingPage />} />
       </Routes>
-    
+      </div>
   );
 }
 

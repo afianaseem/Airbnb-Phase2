@@ -1,13 +1,44 @@
-#heading
-{
-    font-size: 2.5rem;
-    font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
-    font-weight: 500;
+/* General Styles */
+body {
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f7f7f7; /* Light gray background for better contrast */
 }
+
+/* Heading Style */
+#heading {
+    font-size: 2.5rem;
+    font-weight: 600;
+    color: #333; /* Darker text for better visibility */
+    text-align: center;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    font-family: 'Poppins', sans-serif; /* Modern font */
+}
+
+/* Main Container */
 #main-container {
     position: absolute;
-    top: 24%;
-    left: 5%;
-    width: 100%;
-    border: 3px solid black;
+    top: 20%; /* Center vertically */
+    left: 10%; /* Add space from the left */
+    right: 10%; /* Add space from the right */
+    padding: 20px;
+    background-color: rgb(241, 240, 154); /* Clean white background */
+    border-radius: 10px; /* Rounded corners */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Soft shadow for a floating effect */
+}
+
+/* Responsive Design */
+@media screen and (max-width: 768px) {
+    #main-container {
+        top: 15%; /* Adjust top position for smaller screens */
+        left: 5%; /* Adjust left padding */
+        right: 5%; /* Adjust right padding */
+        padding: 15px;
+    }
+
+    #heading {
+        font-size: 2rem; /* Slightly smaller heading on smaller screens */
+    }
 }
