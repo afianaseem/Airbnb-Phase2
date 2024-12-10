@@ -1,5 +1,5 @@
 import React, { useRef, useState, useEffect } from 'react';
-import './SlideBar.css';
+import './Carousel.css';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import {
   faCity,

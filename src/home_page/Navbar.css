@@ -1,0 +1,167 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  body {
+    overflow-x: hidden;
+    max-width: 100%;
+  }
+  
+  nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 20vh;
+    background: white;
+    position: fixed;
+    width: 100%;
+    z-index: 10000;
+    padding: 0 2rem;
+    top: 0;
+  }
+  
+  #logoname {
+    display: flex;
+    align-items: center;
+    font-size: 1.5rem;
+    font-weight: 500;
+    cursor: pointer;
+  }
+  
+  #logoname:hover #air_logo,
+  #logoname:hover #name {
+    color: rgb(211, 22, 22);
+  }
+  
+  #air_logo {
+    width: 2.5rem;
+    height: 2.5rem;
+  }
+  
+  #name {
+    margin-left: 0.4rem;
+  }
+  
+  #navigation1,
+  #right_nav_items {
+    display: flex;
+    align-items: center;
+    list-style-type: none;
+  }
+  
+  #navigation1 {
+    justify-content: center;
+    flex-grow: 1;
+  }
+  
+  #right_nav_items {
+    justify-content: flex-end;
+  }
+  
+  .nav_li,
+  .nav_li_right {
+    margin: 0 0.7rem;
+    padding: 5px 10px;
+    border-radius: 20px;
+    cursor: pointer;
+  }
+  
+  .nav_li a,
+  .nav_li_right a {
+    color: grey;
+    text-decoration: none;
+    font-weight: 400;
+  }
+  
+  .nav_li.active a {
+    color: black;
+    font-weight: 600;
+  }
+  
+  .nav_li:hover,
+  .nav_li_right:hover {
+    background: rgba(128, 128, 128, 0.1);
+  }
+  
+  #login_button {
+    display: flex;
+    align-items: center;
+    border: 0.1px solid grey;
+    border-radius: 50px;
+    padding: 5px 10px;
+    cursor: pointer;
+  }
+  
+  #Bar,
+  #user {
+    margin-right: 5px;
+  }
+  
+  #globe {
+    width: 1.3rem;
+    height: 1.3rem;
+  }
+  
+  #user {
+    background: black;
+    color: white;
+    border-radius: 50%;
+    padding: 5px;
+  }
+  
+  /* Responsive Styles */
+  @media (max-width: 768px) {
+    nav {
+      flex-wrap: wrap;
+      padding: 0 1rem;
+    }
+  
+    #navigation1,
+    #right_nav_items {
+      flex-direction: column;
+      align-items: flex-start;
+      display: none; /* Initially hidden on mobile */
+      width: 100%;
+      background: white;
+      position: absolute;
+      top: 12vh;
+      left: 0;
+      padding: 1rem;
+      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+      z-index: 999;
+    }
+  
+    .nav_active {
+      display: flex !important;
+    }
+  
+    #right_nav_items {
+      margin-top: 1rem;
+      justify-content: flex-start;
+    }
+  
+    .hamburger {
+      display: block;
+      cursor: pointer;
+    }
+  
+    #navigation1 li,
+    #right_nav_items li {
+      width: 100%;
+      padding: 0.5rem 0;
+      border-bottom: 1px solid #ddd;
+    }
+  
+    #logoname {
+      flex-grow: 1;
+    }
+  }
+  
+  @media (min-width: 769px) {
+    .hamburger {
+      display: none;
+    }
+  }
+  

@@ -1,0 +1,81 @@
+/* General container for the card */
+.container1 {
+   
+    height: auto;
+    width: 23vw;
+    position: relative;
+    display: flex;
+    margin-bottom: 5%;
+  flex-direction: column;
+
+  
+     /* Enable absolute positioning for child elements */
+}
+
+/* Flex container for the carousel images */
+.carousel-container-images {
+   display: flex;
+   width: 23vw; /* Set fixed width for images */
+   height: 40vh;
+   
+   position: relative; /* Ensure child elements can position relative to this */
+   overflow: hidden; /* Prevent overflow */
+}
+
+/* Container for the images */
+.image-container {
+    display: flex; 
+    transition: transform 0.5s ease; 
+   
+}
+
+/* Individual images in the carousel */
+.image-item {
+    width: 20vw; /* Set fixed width for images */
+    height: 35vh; /* Maintain aspect ratio */
+    /* Space between images */
+    border-radius: 8px; /* Rounded corners for images */
+    object-fit: cover; /* Cover the entire space of the image */
+    transition: transform 0.5s ease;
+}
+
+/* Button styling */
+button {
+    background-color:transparent; /* Semi-transparent background */
+    padding: 10px;
+    cursor: pointer;
+    z-index: 1000; /* Ensure buttons appear above everything else */
+    position: absolute; /* Absolute positioning for buttons */
+}
+
+/* Positioning for previous button */
+#prevButton {
+    left:2%; /* Position previous button to the left */
+    top: 50%; /* Center vertically */
+    transform: translateY(-50%); /* Adjust for vertical centering */
+    background-color:transparent;
+}
+
+/* Positioning for next button */
+#nextButton {
+    right: 17%; /* Position next button to the right */
+    top: 50%; /* Center vertically */
+    transform: translateY(-50%); /* Adjust for vertical centering */
+    background-color:transparent;
+}
+
+/* Hover effect for buttons */
+#prevButton:hover, #nextButton:hover {
+    background-color: rgb(233, 227, 227,0.2); /* Fully opaque on hover */
+}
+
+/* Make the button disabled state less prominent */
+button:disabled {
+    opacity: 0.5; /* Reduce opacity */
+    cursor: not-allowed; /* Change cursor to indicate disabled state */
+}
+
+/* Styling for the text under the carousel */
+h5, p {
+   width: 20vw;
+}

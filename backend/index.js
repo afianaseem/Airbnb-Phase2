@@ -8,8 +8,10 @@ dotenv.config();
 const app = express();
 const PORT = 3000;
 
-// Use CORS middleware (Allow requests from localhost:5173)
-app.use(cors({ origin: 'http://localhost:5173' }));
+// Use CORS middleware
+app.use(cors());  // Allows all domains to make requests to your server
+// You can configure CORS to be more restrictive if needed:
+// app.use(cors({ origin: 'http://your-frontend-url.com' }));
 
 // Connect to MongoDB using the URI from .env
 mongoose.connect(process.env.MONGODB_URI, { useNewUrlParser: true, useUnifiedTopology: true })

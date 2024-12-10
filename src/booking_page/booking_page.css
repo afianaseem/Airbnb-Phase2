@@ -1,0 +1,13 @@
+#heading
+{
+    font-size: 2.5rem;
+    font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    font-weight: 500;
+}
+#main-container {
+    position: absolute;
+    top: 24%;
+    left: 5%;
+    width: 100%;
+    border: 3px solid black;
+}
